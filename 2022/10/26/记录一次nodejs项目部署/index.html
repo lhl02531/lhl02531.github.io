@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="项目部署,学习,nodejs,">
+  <meta name="keywords" content="学习,项目部署,nodejs,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="服务器购买略鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。由于我使用的是密钥登录，所以需要配置密钥对密钥对会在下面讲，这里就不多说。由于需要开发端口，所以需要配置安全组 putty可以通过阿里云提供的服务创建密钥对https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.">
-<meta name="keywords" content="项目部署,学习,nodejs">
+<meta name="keywords" content="学习,项目部署,nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录一次nodejs项目部署">
 <meta property="og:url" content="http://lhl02531.github.io/2022/10/26/记录一次nodejs项目部署/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="服务器购买略鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。由于我使用的是密钥登录，所以需要配置密钥对密钥对会在下面讲，这里就不多说。由于需要开发端口，所以需要配置安全组 putty可以通过阿里云提供的服务创建密钥对https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-10-26T16:55:44.000Z">
+<meta property="og:updated_time" content="2022-10-27T05:50:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录一次nodejs项目部署">
 <meta name="twitter:description" content="服务器购买略鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。由于我使用的是密钥登录，所以需要配置密钥对密钥对会在下面讲，这里就不多说。由于需要开发端口，所以需要配置安全组 putty可以通过阿里云提供的服务创建密钥对https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.">
@@ -454,7 +454,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="服务器购买"><a href="#服务器购买" class="headerlink" title="服务器购买"></a>服务器购买</h1><p>略<br>鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。<br>由于我使用的是密钥登录，所以需要配置<strong>密钥对</strong><br>密钥对会在下面讲，这里就不多说。<br>由于需要开发端口，所以需要配置<strong>安全组</strong></p>
 <h1 id="putty"><a href="#putty" class="headerlink" title="putty"></a>putty</h1><p>可以通过阿里云提供的服务创建密钥对<br><a href="https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb" target="_blank" rel="noopener">https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb</a><br>也可以通过<strong>PUTTYGEN.EXE</strong><br><a href="https://www.cnblogs.com/baker95935/p/9810986.html" target="_blank" rel="noopener">https://www.cnblogs.com/baker95935/p/9810986.html</a><br>使用密钥对关联云服务器实例后， 需要<strong>重启一下云服务器</strong><br><a href="https://www.cnblogs.com/baker95935/p/9810435.html" target="_blank" rel="noopener">https://www.cnblogs.com/baker95935/p/9810435.html</a><br>putty 设置 <strong>keep live</strong>，保证不会一下子就断连<br><a href="https://www.cnblogs.com/lovewhatIlove/p/16580861.html" target="_blank" rel="noopener">https://www.cnblogs.com/lovewhatIlove/p/16580861.html</a></p>
 <p>我的后端代码是通过私有git 仓库上传的同步的， 前端代码是生成 <strong>dist</strong>文件夹直接通过 <strong>PSCP</strong></p>
-<p><code>pscp -P  22 -i C:\你的私钥文件 -C -r dist username@ip:云服务器的目录</code><br><a href="https://www.cnblogs.com/wxsj/p/9816588.html" target="_blank" rel="noopener">https://www.cnblogs.com/wxsj/p/9816588.html</a></p>
+<p><code>pscp -P  22 -i C:\你的私钥文件 -C -r dist username@ip:云服务器的目录</code><br><a href="https://www.cnblogs.com/wxsj/p/9816588.html" target="_blank" rel="noopener">https://www.cnblogs.com/wxsj/p/9816588.html</a><br><a id="more"></a></p>
 <h1 id="服务器安装相应环境"><a href="#服务器安装相应环境" class="headerlink" title="服务器安装相应环境"></a>服务器安装相应环境</h1><h2 id="nodejs-安装"><a href="#nodejs-安装" class="headerlink" title="nodejs 安装"></a>nodejs 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz # 下载nodejs</span><br><span class="line">tar -zxvf node-v12.13.0-linux-x64.tar.gz # 解压</span><br><span class="line">mv node-v12.13.0-linux-x64 /opt/nodejs_12.16  # 移动目录</span><br><span class="line">ln -s /opt/nodejs_12.16/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /opt/nodejs_12.16/bin/npm /usr/local/bin/npm # 软链接</span><br></pre></td></tr></table></figure>
 <p>尝试一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></p>
 <p><code>vim /etc/profile</code> 修改系统配置<br><code>source /etc/profile</code> 配置生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/opt/nodejs12.16/</span><br><span class="line">export PATH=$PATH:$NODE_HOME/bin </span><br><span class="line">export NODE_PATH=$NODE_HOME/lib/node_modules</span><br></pre></td></tr></table></figure></p>
@@ -486,9 +486,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/项目部署/" rel="tag"><i class="fa fa-tag"></i> 项目部署</a>
-          
             <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/项目部署/" rel="tag"><i class="fa fa-tag"></i> 项目部署</a>
           
             <a href="/tags/nodejs/" rel="tag"><i class="fa fa-tag"></i> nodejs</a>
           
@@ -512,6 +512,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/12/06/微信小程序学习记录/" rel="prev" title="记录学习微信小程序和微信云开发">
+                记录学习微信小程序和微信云开发 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -596,7 +600,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -607,7 +611,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -620,7 +624,7 @@
                     <h3 class="widget-title">Tag Cloud</h3>
                     <div id="myCanvasContainer" class="widget tagcloud">
                         <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目部署/">项目部署</a><span class="tag-list-count">1</span></li></ul>
+                            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信云开发/">微信云开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信小程序/">微信小程序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/项目部署/">项目部署</a><span class="tag-list-count">1</span></li></ul>
                         </canvas>
                     </div>
                 </div>
