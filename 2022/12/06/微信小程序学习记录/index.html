@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="微信小程序入门认识项目结构  cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看">
+<meta name="description" content="微信小程序入门认识项目结构 cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看完">
 <meta name="keywords" content="微信小程序,微信云开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记录学习微信小程序和微信云开发">
 <meta property="og:url" content="http://lhl02531.github.io/2022/12/06/微信小程序学习记录/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="微信小程序入门认识项目结构  cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看">
+<meta property="og:description" content="微信小程序入门认识项目结构 cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看完">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/lhl02531/my_image_hosting/main/20221207162146.png">
-<meta property="og:updated_time" content="2022-12-07T10:00:54.000Z">
+<meta property="og:updated_time" content="2023-02-21T10:51:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录学习微信小程序和微信云开发">
-<meta name="twitter:description" content="微信小程序入门认识项目结构  cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/lhl02531/my_image_hosting/main/20221207162146.png">
+<meta name="twitter:description" content="微信小程序入门认识项目结构 cloudfunctions 云函数 miniprogram 小程序 miniprogram_npm 是项目所需要的依赖，node_module 是本地依赖。用npm install 安装完本地依赖，需要使用小程序ide 工具 –&amp;gt; 构建npm 进行构建后才能供小程序使用。   微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看完">
 
 
 
@@ -244,22 +242,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-notes">
-          <a href="/notes" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>
-            
-            笔记
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-project">
           <a href="/project" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-code"></i> <br>
             
             实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br>
+            
+            notes
           </a>
         </li>
       
@@ -453,8 +451,7 @@
       
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="微信小程序入门"><a href="#微信小程序入门" class="headerlink" title="微信小程序入门"></a>微信小程序入门</h1><h2 id="认识项目结构"><a href="#认识项目结构" class="headerlink" title="认识项目结构"></a>认识项目结构</h2><p><img src="https://raw.githubusercontent.com/lhl02531/my_image_hosting/main/20221207162146.png" alt=""></p>
-<ol>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="微信小程序入门"><a href="#微信小程序入门" class="headerlink" title="微信小程序入门"></a>微信小程序入门</h1><h2 id="认识项目结构"><a href="#认识项目结构" class="headerlink" title="认识项目结构"></a>认识项目结构</h2><ol>
 <li><code>cloudfunctions</code> 云函数</li>
 <li><code>miniprogram</code> 小程序</li>
 <li><code>miniprogram_npm</code> 是项目所需要的依赖，<code>node_module</code> 是本地依赖。用<code>npm install</code> 安装完本地依赖，需要使用小程序ide 工具 –&gt; 构建npm 进行构建后才能供小程序使用。</li>
@@ -552,8 +549,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/12/07/小程序开发记录/" rel="prev" title="小程序开发-稍后再读">
-                小程序开发-稍后再读 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/12/07/小程序开发记录/" rel="prev" title="小程序开发-几句话推荐">
+                小程序开发-几句话推荐 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -737,7 +734,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2022</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
