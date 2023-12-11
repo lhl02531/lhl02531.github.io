@@ -1,37 +1,1038 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32-my.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16-my.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/uploads/logo-my.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,项目部署,nodejs," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="服务器购买略鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。由于我使用的是密钥登录，所以需要配置密钥对密钥对会在下面讲，这里就不多说。由于需要开发端口，所以需要配置安全组 putty可以通过阿里云提供的服务创建密钥对https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;51793.html?spm&#x3D;5176.2020520101keypair.help.13.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录nodejs项目部署">
+<meta property="og:url" content="http://lhl02531.github.io/2022/10/26/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1nodejs%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="服务器购买略鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。由于我使用的是密钥登录，所以需要配置密钥对密钥对会在下面讲，这里就不多说。由于需要开发端口，所以需要配置安全组 putty可以通过阿里云提供的服务创建密钥对https:&#x2F;&#x2F;help.aliyun.com&#x2F;document_detail&#x2F;51793.html?spm&#x3D;5176.2020520101keypair.help.13.">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-10-26T14:40:59.000Z">
+<meta property="article:modified_time" content="2023-12-06T16:39:48.000Z">
+<meta property="article:author" content="lv">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="项目部署">
+<meta property="article:tag" content="nodejs">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'BDI3KTICZ6',
+      apiKey: 'd5c572c092754ebdb2aeff7ef4f3e9d2',
+      indexName: 'for-hexo-blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lhl02531.github.io/2022/10/26/记录一次nodejs项目部署/"/>
+
+
+
+
+
+  <title>记录nodejs项目部署 | Hexo</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-130436379-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Keep it Simple and Stupid</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-project">
+          <a href="/project%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            notes
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2022/10/26/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1nodejs%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lv">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">记录nodejs项目部署</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-10-26T22:40:59+08:00">
+                2022-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" itemprop="url" rel="index">
+                    <span itemprop="name">项目部署</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2022/10/26/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1nodejs%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="记录nodejs项目部署">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="服务器购买"><a href="#服务器购买" class="headerlink" title="服务器购买"></a>服务器购买</h1><p>略<br>鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。<br>由于我使用的是密钥登录，所以需要配置<strong>密钥对</strong><br>密钥对会在下面讲，这里就不多说。<br>由于需要开发端口，所以需要配置<strong>安全组</strong></p>
+<h1 id="putty"><a href="#putty" class="headerlink" title="putty"></a>putty</h1><p>可以通过阿里云提供的服务创建密钥对<br><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb">https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb</a><br>也可以通过<strong>PUTTYGEN.EXE</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baker95935/p/9810986.html">https://www.cnblogs.com/baker95935/p/9810986.html</a><br>使用密钥对关联云服务器实例后， 需要<strong>重启一下云服务器</strong><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baker95935/p/9810435.html">https://www.cnblogs.com/baker95935/p/9810435.html</a><br>putty 设置 <strong>keep live</strong>，保证不会一下子就断连<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lovewhatIlove/p/16580861.html">https://www.cnblogs.com/lovewhatIlove/p/16580861.html</a></p>
+<p>我的后端代码是通过私有git 仓库上传的同步的， 前端代码是生成 <strong>dist</strong>文件夹直接通过 <strong>PSCP</strong></p>
+<p><code>pscp -P  22 -i C:\你的私钥文件 -C -r dist username@ip:云服务器的目录</code><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wxsj/p/9816588.html">https://www.cnblogs.com/wxsj/p/9816588.html</a><br><span id="more"></span></p>
+<h1 id="服务器安装相应环境"><a href="#服务器安装相应环境" class="headerlink" title="服务器安装相应环境"></a>服务器安装相应环境</h1><h2 id="nodejs-安装"><a href="#nodejs-安装" class="headerlink" title="nodejs 安装"></a>nodejs 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz # 下载nodejs</span><br><span class="line">tar -zxvf node-v12.13.0-linux-x64.tar.gz # 解压</span><br><span class="line">mv node-v12.13.0-linux-x64 /opt/nodejs_12.16  # 移动目录</span><br><span class="line">ln -s /opt/nodejs_12.16/bin/node /usr/local/bin/node</span><br><span class="line">ln -s /opt/nodejs_12.16/bin/npm /usr/local/bin/npm # 软链接</span><br></pre></td></tr></table></figure>
+<p>尝试一下<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><br><code>vim /etc/profile</code> 修改系统配置<br><code>source /etc/profile</code> 配置生效<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export NODE_HOME=/opt/nodejs12.16/</span><br><span class="line">export PATH=$PATH:$NODE_HOME/bin </span><br><span class="line">export NODE_PATH=$NODE_HOME/lib/node_modules</span><br></pre></td></tr></table></figure></p>
+<h3 id="云服务器上更新-nodejs"><a href="#云服务器上更新-nodejs" class="headerlink" title="云服务器上更新 nodejs"></a>云服务器上更新 nodejs</h3><blockquote>
+<p>2023-12-06 记录一下在云服务器上如何更新nodejs</p>
+</blockquote>
+<blockquote>
+<p>新属性空值合并运算符 <code>??</code>在低版本nodejs 会报错，,<a target="_blank" rel="noopener" href="https://www.mongodb.com/community/forums/t/this-options-options/216084">mongodb 需要更高的nodejs版本</a></p>
+</blockquote>
+<ol>
+<li>重新下载一下，nodejs 版本， lts 长期版本已经是18.x 起，所以个人服务器建议至少要下载18.x版本</li>
+<li>查看一下原来的 node,npm, <code>whereis npm</code>，<code>ls -l /usr/local/bin/node</code></li>
+<li>删除原来的软链，<code>rm -rf /usr/local/bin/node</code>，<strong>记住不要最后加 /</strong></li>
+<li>重新生成一下软链，<code>ln -s</code></li>
+<li><code>vim /etc/profile</code> 修改配置， 修改原理 nodejs位置即可</li>
+<li><code>source /etc/profile</code> 重新加载配置</li>
+<li>配置镜像源</li>
+</ol>
+<h2 id="安装pm2"><a href="#安装pm2" class="headerlink" title="安装pm2"></a>安装pm2</h2><p>pm2 可以管理多个nodejs项目<br><code>npm install -g pm2</code> 这个会有一个问题，<br>如果你要运行 <em>pm2</em>的话，<br><code>node pm2</code>，<br>我的做法是<em>pm2</em> 软链接到 <code>/usr/bin/pm2</code>下</p>
+<h3 id="重新配置"><a href="#重新配置" class="headerlink" title="重新配置"></a>重新配置</h3><blockquote>
+<p>2023-12-06 记录一下在云服务器上如何更新pm2</p>
+<ol>
+<li>删除软链</li>
+<li>npm install pm2, 建立软链</li>
+</ol>
+</blockquote>
+<h3 id="pm2-log"><a href="#pm2-log" class="headerlink" title="pm2 log"></a>pm2 log</h3><p><code>pm2 log</code>, 可以查看日志<br><code>.pm2/logs/www-out.log</code>， 查看成功日志<br><code>.pm2/logs/www-error.log</code>， 查看失败日志</p>
+<h2 id="MongoDB-安装"><a href="#MongoDB-安装" class="headerlink" title="MongoDB 安装"></a>MongoDB 安装</h2><p>MongoDB 安装都是安装这个<br><a target="_blank" rel="noopener" href="https://www.runoob.com/mongodb/mongodb-linux-install.html">https://www.runoob.com/mongodb/mongodb-linux-install.html</a><br><strong>/opt/mongodb_4.2.23/config.conf</strong> 后台启动时的文件如下<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#日志文件位置</span><br><span class="line">logpath=/var/log/mongodb/mongodb.log</span><br><span class="line"># 以追加方式写入日志</span><br><span class="line">logappend=true</span><br><span class="line"># 是否以守护进程方式运行</span><br><span class="line">fork = true</span><br><span class="line"># 默认27017</span><br><span class="line">port = 27017</span><br><span class="line"># 数据库文件位置</span><br><span class="line">dbpath= /var/lib/mongodb</span><br><span class="line"># 启用定期记录CPU利用率和 I/O 等待</span><br><span class="line">cpu = true</span><br><span class="line"># 是否以安全认证方式运行，默认是不认证的非安全方式</span><br><span class="line">noauth = true</span><br><span class="line"># auth = true</span><br><span class="line"># 详细记录输出</span><br><span class="line">#verbose = true</span><br><span class="line">bind_ip = 0.0.0.0</span><br><span class="line"># 最大链接数</span><br><span class="line">maxConns = 100</span><br><span class="line"># 防止插入脏数据</span><br><span class="line">objcheck = true</span><br><span class="line">#pidfilepath：进程ID，没有指定则启动时候就没有PID文件</span><br><span class="line">pidfilepath = /var/run/mongo.pid</span><br></pre></td></tr></table></figure><br>启动和停止服务的命令<br><code>mongod --config /opt/mongodb_4.2.23/config.conf</code>, 启动<br><code>mongod --shutdown --config /opt/mongodb_4.2.23/config.conf</code>, 停止服务<br><code>mongo</code>, 进入服务器</p>
+<h3 id="MongoDB-import-json-文件"><a href="#MongoDB-import-json-文件" class="headerlink" title="MongoDB import json 文件"></a>MongoDB import json 文件</h3><blockquote>
+<p>本地导出json， 云上导入时报错,MongoDB Atlas mongoimport issues cannot decode array into a D<br>解决方案:<code>https://stackoverflow.com/questions/58150528/mongodb-atlas-mongoimport-issues-cannot-decode-array-into-a-d</code></p>
+</blockquote>
+<p><code>mongoimport --db [dbName] --collection [collectionName] --file [fileName] --jsonArray</code></p>
+<h2 id="nginx-安装"><a href="#nginx-安装" class="headerlink" title="nginx 安装"></a>nginx 安装</h2><p><code>apt-get install -y nginx</code></p>
+<p>新建配置文件<strong>/etc/nginx/conf.d/default.conf</strong>，<br>配置文件需要注意</p>
+<ol>
+<li>这个配置需要 <code>location //</code> ,<code>root /dist/</code> 目录和location 需要判断是否需要加上 <code>/</code></li>
+<li><code>upstream ...</code> 这段代码是转发给后端接口 3000, 尝试通过 location 匹配但是没成功<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 转发到后端端口3000</span><br><span class="line">upstream koa.server&#123;</span><br><span class="line">   server localhost:3000;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  ip ; # //你的公网ip</span><br><span class="line">    # url 匹配 ip</span><br><span class="line">    location / &#123;</span><br><span class="line">       root   /dist/index; # 前端代码目录</span><br><span class="line">        index  index.html; #  //该文件为目录下的index.html文件</span><br><span class="line">    &#125;</span><br><span class="line">    # url 匹配 ip/mall</span><br><span class="line">    location /mall/&#123;</span><br><span class="line">        alias /opt/mall/dist/;</span><br><span class="line">        index index.html index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="学会看日志排查问题"><a href="#学会看日志排查问题" class="headerlink" title="学会看日志排查问题"></a>学会看日志排查问题</h3><p>nginx 的日志在 <code>cat /var/log/nginx/access.log</code><br><code>/var/log/nginx/error.log</code><br>以下是我遇到配置mall项目时候遇到 403 的问题，<br>说明大概率是nginx 用户没有权限，<br>需要改变文件夹的权限 <code>chmod 755 path</code><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/78e5e233bc81">https://www.jianshu.com/p/78e5e233bc81</a></p>
+<h3 id="alias-与-root的区别"><a href="#alias-与-root的区别" class="headerlink" title="alias 与 root的区别"></a>alias 与 root的区别</h3><blockquote>
+<p><code>https://www.jianshu.com/p/a16936455018</code>, alias 与 root 的区别</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" rel="tag"><i class="fa fa-tag"></i> 项目部署</a>
+          
+            <a href="/tags/nodejs/" rel="tag"><i class="fa fa-tag"></i> nodejs</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" rel="next" title="记一次Ubuntu系统搭建过程">
+                <i class="fa fa-chevron-left"></i> 记一次Ubuntu系统搭建过程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/12/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="记录学习微信小程序遇到的问题和解决方案">
+                记录学习微信小程序遇到的问题和解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bf4195eaaaa6ffe" async = "async" ></script>
+</div>
+
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="lv" />
+            
+              <p class="site-author-name" itemprop="name">lv</p>
+              <p class="site-description motion-element" itemprop="description">lv</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+                <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+                <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+                <div class="widget-wrap">
+                    <h3 class="widget-title">Tag Cloud</h3>
+                    <div id="myCanvasContainer" class="widget tagcloud">
+                        <canvas width="250" height="250" id="resCanvas" style="width=100%">
+                            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/" rel="tag">next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%98%E5%8C%96/" rel="tag">优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E4%BA%91%E5%BC%80%E5%8F%91/" rel="tag">微信云开发</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" rel="tag">项目部署</a><span class="tag-list-count">1</span></li></ul>
+                        </canvas>
+                    </div>
+                </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://github.com/lhl02531" title="github" target="_blank">github</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0"><span class="nav-number">1.</span> <span class="nav-text">服务器购买</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#putty"><span class="nav-number">2.</span> <span class="nav-text">putty</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85%E7%9B%B8%E5%BA%94%E7%8E%AF%E5%A2%83"><span class="nav-number">3.</span> <span class="nav-text">服务器安装相应环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">nodejs 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%9B%B4%E6%96%B0-nodejs"><span class="nav-number">3.1.1.</span> <span class="nav-text">云服务器上更新 nodejs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pm2"><span class="nav-number">3.2.</span> <span class="nav-text">安装pm2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">重新配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pm2-log"><span class="nav-number">3.2.2.</span> <span class="nav-text">pm2 log</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB-%E5%AE%89%E8%A3%85"><span class="nav-number">3.3.</span> <span class="nav-text">MongoDB 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB-import-json-%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.1.</span> <span class="nav-text">MongoDB import json 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx-%E5%AE%89%E8%A3%85"><span class="nav-number">3.4.</span> <span class="nav-text">nginx 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%BC%9A%E7%9C%8B%E6%97%A5%E5%BF%97%E6%8E%92%E6%9F%A5%E9%97%AE%E9%A2%98"><span class="nav-number">3.4.1.</span> <span class="nav-text">学会看日志排查问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias-%E4%B8%8E-root%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.4.2.</span> <span class="nav-text">alias 与 root的区别</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lv</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("BBNXitg2kGUrvvTvEtmLhntq-gzGzoHsz", "1WI914vOR3avt2aki1ahz3z4");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+   <script>
+  
+   </script>
+</body>
+</html>
