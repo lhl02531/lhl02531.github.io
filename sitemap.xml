@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lhl02531.github.io/about/index.html</loc>
+    
+    <lastmod>2024-02-18T15:39:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhl02531.github.io/2019/01/12/hexo%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA/</loc>
+    
+    <lastmod>2024-02-18T15:03:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lhl02531.github.io/2024/02/18/webpack-vant-%25E6%258C%2589%25E9%259C%2580%25E5%25AF%25BC%25E5%2585%25A5%25E6%258A%25A5%25E9%2594%2599-ComponentsPlugin-is-not-a-function/</loc>
     
     <lastmod>2024-02-18T13:52:14.000Z</lastmod>
@@ -44,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://lhl02531.github.io/about/index.html</loc>
-    
-    <lastmod>2023-02-21T09:16:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lhl02531.github.io/project/index.html</loc>
     
     <lastmod>2023-02-21T09:14:46.000Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://lhl02531.github.io/notes/index.html</loc>
     
     <lastmod>2023-02-21T09:13:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhl02531.github.io/2019/01/12/hexo%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA/</loc>
-    
-    <lastmod>2022-10-26T14:35:40.000Z</lastmod>
     
   </url>
   
