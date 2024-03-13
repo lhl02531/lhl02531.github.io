@@ -20,31 +20,35 @@
     var CONFIG = {"hostname":"lhl02531.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"b2t":false,"scrollpercent":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"BDI3KTICZ6","apiKey":"d5c572c092754ebdb2aeff7ef4f3e9d2","indexName":"for-hexo-blog","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="lv">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://lhl02531.github.io/index.html">
+  <meta name="description" content="项目背景过年前学完了 react 和 ts,在找面试项目 idea 的时候找到了这个掘金手册，Node + React 实战：从 0 到 1 实现记账本，总体来说，符合我的要求，所以我的项目在这个项目的基础上加上了改进。 那时我并不知道这个想法会让我吃个大亏。不过幸运的是，这个项目最终完成了。具体的改进如下：  使用了最新的 react18 和 react routerv6 开始使用 TypeSc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记录-react + ts + egg 全栈开发账单H5">
+<meta property="og:url" content="http://lhl02531.github.io/2024/03/13/react-ts-%E5%BC%80%E5%8F%91%E8%B4%A6%E5%8D%95H5-%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="lv">
+<meta property="og:description" content="项目背景过年前学完了 react 和 ts,在找面试项目 idea 的时候找到了这个掘金手册，Node + React 实战：从 0 到 1 实现记账本，总体来说，符合我的要求，所以我的项目在这个项目的基础上加上了改进。 那时我并不知道这个想法会让我吃个大亏。不过幸运的是，这个项目最终完成了。具体的改进如下：  使用了最新的 react18 和 react routerv6 开始使用 TypeSc">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-13T01:52:01.000Z">
+<meta property="article:modified_time" content="2024-03-13T09:35:34.000Z">
 <meta property="article:author" content="lv">
-<meta property="article:tag" content="java hexo 个人博客 lv">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="Egg.js">
+<meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://lhl02531.github.io/">
+<link rel="canonical" href="http://lhl02531.github.io/2024/03/13/react-ts-%E5%BC%80%E5%8F%91%E8%B4%A6%E5%8D%95H5-%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>记录-react + ts + egg 全栈开发账单H5 | Hexo</title>
   
 
 
@@ -193,9 +197,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -211,10 +216,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/03/13/react-ts-%E5%BC%80%E5%8F%91%E8%B4%A6%E5%8D%95H5-%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">记录-react + ts + egg 全栈开发账单H5</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          记录-react + ts + egg 全栈开发账单H5
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -262,7 +266,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>过年前学完了 <code>react</code> 和 <code>ts</code>,在找面试项目 idea 的时候找到了这个掘金手册，<a href="https://juejin.cn/book/6966551262766563328?scrollMenuIndex=1">Node + React 实战：从 0 到 1 实现记账本</a>，总体来说，符合我的要求，所以我的项目在这个项目的基础上加上了改进。 那时我并不知道这个想法会让我吃个大亏。不过幸运的是，这个项目最终完成了。<br>具体的改进如下：</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>过年前学完了 <code>react</code> 和 <code>ts</code>,在找面试项目 idea 的时候找到了这个掘金手册，<a href="https://juejin.cn/book/6966551262766563328?scrollMenuIndex=1">Node + React 实战：从 0 到 1 实现记账本</a>，总体来说，符合我的要求，所以我的项目在这个项目的基础上加上了改进。 那时我并不知道这个想法会让我吃个大亏。不过幸运的是，这个项目最终完成了。<br>具体的改进如下：</p>
 <ol>
 <li>使用了最新的 <code>react18</code> 和 <code>react routerv6</code></li>
 <li>开始使用 <code>TypeScript</code> 进行类型约束</li>
@@ -345,744 +349,35 @@
 <h3 id="nginx-配置-css-js-访问不到"><a href="#nginx-配置-css-js-访问不到" class="headerlink" title="nginx 配置, css,js 访问不到"></a>nginx 配置, css,js 访问不到</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">  location / &#123;</span><br><span class="line">       root   /opt/xxxxxx/dist;</span><br><span class="line">        index  index.html; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    location /bill/&#123;</span><br><span class="line">        alias /opt/bill_server/app/public/dist/;</span><br><span class="line">        index index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当项目部署了太多的项目时，我们的 <code>react</code> 项目不太可能匹配 <code>/</code>, 而是要匹配 <code>/bill</code> 这个路径<br>当我们要去访问这个项目的时，访问地址是 <code>域名/bill/xxxx</code><br>当查看 <code>/var/log/nginx/error.log</code> 时, 发现我们的资源访问的地址却是 <code>域名/assets/index-xxx.css/域名/assets/index-xxx.js</code><br>而我们真正需要的访问的是 <code>域名/bill/assets/index-xxx.css/域名/bill/assets/index-xxx.js</code>,<br>而在 <code>vite</code> 中的这个方法是 <a href="https://cn.vitejs.dev/config/shared-options.html#base">base配置</a><br>简单一点的是做法是给 <code>package.json</code>的 <code>build</code> 改成 <code>&quot;build&quot;: &quot;tsc &amp;&amp; vite build --base=/bill/&quot;</code><br>虽然这一步做完了，但页面还是无法正常跳转的话，这是因为你的路由配置的有问题<br><a href="https://starlightunion.github.io/blog/other/aboutdeploy/sub-directory-deploy.html#%E4%B8%80%E3%80%81%E4%BF%AE%E6%94%B9%E8%B5%84%E6%BA%90%E8%B7%AF%E5%BE%84">参考：Nginx部署React项目至服务器二级目录实践</a><br>需要在路由中添加 <code>basename</code></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"># React</a>
+              <a href="/tags/Egg-js/" rel="tag"># Egg.js</a>
+              <a href="/tags/TypeScript/" rel="tag"># TypeScript</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2024/02/18/webpack-vant-%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5%E6%8A%A5%E9%94%99-ComponentsPlugin-is-not-a-function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/18/webpack-vant-%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5%E6%8A%A5%E9%94%99-ComponentsPlugin-is-not-a-function/" class="post-title-link" itemprop="url">webpack-vant-按需导入报错-ComponentsPlugin-is-not-a-function</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-18 21:51:51" itemprop="dateCreated datePublished" datetime="2024-02-18T21:51:51+08:00">2024-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-13 09:49:52" itemprop="dateModified" datetime="2024-03-13T09:49:52+08:00">2024-03-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vant/" itemprop="url" rel="index"><span itemprop="name">Vant</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2024/02/18/webpack-vant-%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5%E6%8A%A5%E9%94%99-ComponentsPlugin-is-not-a-function/" class="post-meta-item leancloud_visitors" data-flag-title="webpack-vant-按需导入报错-ComponentsPlugin-is-not-a-function" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>使用 <code>Vant</code>+<code>vue-cli</code>的学习项目中,<br>想使用 <code>unplugin-vue-components</code>,实现按需导入,报错 <code>TypeError: ComponentsPlugin is not a function</code></p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>官方文档已经说明了，<a href="https://vant-contrib.gitee.io/vant/#/zh-CN/quickstart#2.-pei-zhi-cha-jian">官方文档</a><br>相关 issue, <a href="https://github.com/youzan/vant/issues/12499">文档 unplugin-vue-components@0.26.0 引用方式有误 #12499</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; <span class="title class_">VantResolver</span> &#125; = <span class="built_in">require</span>(<span class="string">&#x27;@vant/auto-import-resolver&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ComponentsPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;unplugin-vue-components/webpack&#x27;</span>);</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">plugins</span>: [</span><br><span class="line">      <span class="comment">//   请注意你项目 unplugin-vue-components 的版本，如果大于等于 0.26.0 你需要注释第一行，反之，则相反</span></span><br><span class="line">      <span class="comment">// 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法</span></span><br><span class="line">      <span class="title class_">ComponentsPlugin</span>(&#123; <span class="attr">resolvers</span>: [<span class="title class_">VantResolver</span>()] &#125;),</span><br><span class="line">      <span class="comment">//当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法</span></span><br><span class="line">      <span class="title class_">ComponentsPlugin</span>.<span class="title function_">default</span>(&#123; <span class="attr">resolvers</span>: [<span class="title class_">VantResolver</span>()] &#125;),</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>请注意你项目 unplugin-vue-components 的版本，如果大于等于 0.26.0 你需要注释第一行，反之，则相反</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2024/02/18/windows%E4%B8%8B%E5%88%87%E6%8D%A2NodeJS%E7%89%88%E6%9C%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/18/windows%E4%B8%8B%E5%88%87%E6%8D%A2NodeJS%E7%89%88%E6%9C%AC/" class="post-title-link" itemprop="url">windows下切换NodeJS版本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-18 21:49:15" itemprop="dateCreated datePublished" datetime="2024-02-18T21:49:15+08:00">2024-02-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-13 09:52:12" itemprop="dateModified" datetime="2024-03-13T09:52:12+08:00">2024-03-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NodeJS/" itemprop="url" rel="index"><span itemprop="name">NodeJS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2024/02/18/windows%E4%B8%8B%E5%88%87%E6%8D%A2NodeJS%E7%89%88%E6%9C%AC/" class="post-meta-item leancloud_visitors" data-flag-title="windows下切换NodeJS版本" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="Windows-下使用多版本NodeJS"><a href="#Windows-下使用多版本NodeJS" class="headerlink" title="Windows 下使用多版本NodeJS"></a>Windows 下使用多版本NodeJS</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ol>
-<li>Windows 下可以简单使用，不需要过多的安装和配置</li>
-<li>需要使用多版本的 NodeJS 版本, 如果并不需要使用多版本，建议使用 LTS 版本，这篇文章写于24/2/15,当前版本是 20.x, 18.x 已经是维护版本。</li>
-</ol>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>下载多版本的 NodeJS 版本，<a href="https://repo.huaweicloud.com/nodejs/">华为云镜像站</a>，下载的时候选择<code>node-版本号-win-x64.7z 或.zip 后缀</code> 举例：<code>node-v12.17.0-win-x64.zip</code>或者<code>node-v12.17.0-win-x64.7z</code>压缩包，解压</li>
-<li>创建系统环境变量<code>NODE_HOME</code>，路径是需要的 NodeJS 版本目录</li>
-<li>将创建的这个变量添加到 <code>Path</code> 中</li>
-<li>新开一个 cmd 窗口，验证版本是否生效 <code>node -v</code>, <code>npm -v</code></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2024/02/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1NodeJS%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1NodeJS%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">记录-NodeJS项目部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-02-18 21:47:12 / 修改时间：21:48:54" itemprop="dateCreated datePublished" datetime="2024-02-18T21:47:12+08:00">2024-02-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" itemprop="url" rel="index"><span itemprop="name">项目部署</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/NodeJS/" itemprop="url" rel="index"><span itemprop="name">NodeJS</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2024/02/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1NodeJS%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="post-meta-item leancloud_visitors" data-flag-title="记录-NodeJS项目部署" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="服务器购买"><a href="#服务器购买" class="headerlink" title="服务器购买"></a>服务器购买</h1><p>略<br>鉴于我买的是阿里云的云服务器， 所以接下来的是阿里云的使用。<br>由于我使用的是密钥登录，所以需要配置<strong>密钥对</strong><br>密钥对会在下面讲，这里就不多说。<br>由于需要开发端口，所以需要配置<strong>安全组</strong></p>
-<h1 id="putty"><a href="#putty" class="headerlink" title="putty"></a>putty</h1><p>可以通过阿里云提供的服务创建密钥对<br><a href="https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb">https://help.aliyun.com/document_detail/51793.html?spm=5176.2020520101keypair.help.13.26634df5k8AVA0#concept-wy4-th1-ydb</a><br>也可以通过<strong>PUTTYGEN.EXE</strong><br><a href="https://www.cnblogs.com/baker95935/p/9810986.html">https://www.cnblogs.com/baker95935/p/9810986.html</a><br>使用密钥对关联云服务器实例后， 需要<strong>重启一下云服务器</strong><br><a href="https://www.cnblogs.com/baker95935/p/9810435.html">https://www.cnblogs.com/baker95935/p/9810435.html</a><br>putty 设置 <strong>keep live</strong>，保证不会一下子就断连<br><a href="https://www.cnblogs.com/lovewhatIlove/p/16580861.html">https://www.cnblogs.com/lovewhatIlove/p/16580861.html</a></p>
-<p>我的后端代码是通过私有git 仓库上传的同步的， 前端代码是生成 <strong>dist</strong>文件夹直接通过 <strong>PSCP</strong></p>
-<p><code>pscp -P  22 -i C:\你的私钥文件 -C -r dist username@ip:云服务器的目录</code><br><a href="https://www.cnblogs.com/wxsj/p/9816588.html">https://www.cnblogs.com/wxsj/p/9816588.html</a><br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/02/18/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1NodeJS%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2023/12/06/%E8%AE%B0%E5%BD%95-%E4%BA%91%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/12/06/%E8%AE%B0%E5%BD%95-%E4%BA%91%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">记录-云开发遇到的问题和解决方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-12-06 21:46:06 / 修改时间：23:59:02" itemprop="dateCreated datePublished" datetime="2023-12-06T21:46:06+08:00">2023-12-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BE%AE%E4%BF%A1%E4%BA%91%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">微信云开发</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2023/12/06/%E8%AE%B0%E5%BD%95-%E4%BA%91%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="记录-云开发遇到的问题和解决方案" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="云开发"><a href="#云开发" class="headerlink" title="云开发"></a>云开发</h1><h2 id="技术产生背景"><a href="#技术产生背景" class="headerlink" title="技术产生背景"></a>技术产生背景</h2><p><a href="https://zhuanlan.zhihu.com/p/69774299">云计算</a></p>
-<p>Saas: 常见软件<br>Pass: <a href="https://mp.weixin.qq.com/s/ibaliVf9lGSXEiN0ldYaug">钉钉</a>,云服务器，阿里云，腾讯云。 amazon ec2, amzure<br>Lass: 算力，存储，网络，<a href="https://mp.weixin.qq.com/s/XqUIhlUeWaPABNk0Mc4Qxg">存储</a><br>Serverless(faas+baas): <a href="https://juejin.cn/post/6844903904224903181">Serverless</a></p>
-<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/capabilities.html#%E6%95%B0%E6%8D%AE%E5%BA%93">云数据库</a>， 可以类比MongoDB,可以通过 http api 访问操作</p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/concepts/environment.html">环境</a></p>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/capabilities.html#%E4%BA%91%E5%87%BD%E6%95%B0">云函数</a></p>
-<h3 id="官方-quickStart"><a href="#官方-quickStart" class="headerlink" title="官方 quickStart"></a>官方 quickStart</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 官方 quickStart 例子</span></span><br><span class="line"><span class="comment">// /getOpenId/index</span></span><br><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">&#x27;wx-server-sdk&#x27;</span>);</span><br><span class="line"></span><br><span class="line">cloud.<span class="title function_">init</span>(&#123;</span><br><span class="line">  <span class="attr">env</span>: cloud.<span class="property">DYNAMIC_CURRENT_ENV</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取openId云函数入口函数</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 获取基础信息</span></span><br><span class="line">  <span class="keyword">const</span> wxContext = cloud.<span class="title function_">getWXContext</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="attr">openid</span>: wxContext.<span class="property">OPENID</span>,</span><br><span class="line">    <span class="attr">appid</span>: wxContext.<span class="property">APPID</span>,</span><br><span class="line">    <span class="attr">unionid</span>: wxContext.<span class="property">UNIONID</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// /selectRecord/index.js</span></span><br><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">&#x27;wx-server-sdk&#x27;</span>);</span><br><span class="line"></span><br><span class="line">cloud.<span class="title function_">init</span>(&#123;</span><br><span class="line">  <span class="attr">env</span>: cloud.<span class="property">DYNAMIC_CURRENT_ENV</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> db = cloud.<span class="title function_">database</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询数据库集合云函数入口函数</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 返回数据库查询结果</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span> db.<span class="title function_">collection</span>(<span class="string">&#x27;sales&#x27;</span>).<span class="title function_">get</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/12/06/%E8%AE%B0%E5%BD%95-%E4%BA%91%E5%BC%80%E5%8F%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/18/webpack-vant-%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5%E6%8A%A5%E9%94%99-ComponentsPlugin-is-not-a-function/" rel="prev" title="webpack-vant-按需导入报错-ComponentsPlugin-is-not-a-function">
+      <i class="fa fa-chevron-left"></i> webpack-vant-按需导入报错-ComponentsPlugin-is-not-a-function
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2022/12/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">小程序开发-几句话推荐</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-07 18:04:27" itemprop="dateCreated datePublished" datetime="2022-12-07T18:04:27+08:00">2022-12-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-06 21:42:50" itemprop="dateModified" datetime="2023-12-06T21:42:50+08:00">2023-12-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">微信小程序</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/12/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="小程序开发-几句话推荐" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="小程序开发-几句话推荐"><a href="#小程序开发-几句话推荐" class="headerlink" title="小程序开发-几句话推荐"></a>小程序开发-几句话推荐</h1><h2 id="项目设计"><a href="#项目设计" class="headerlink" title="项目设计"></a>项目设计</h2><h3 id="项目来源"><a href="#项目来源" class="headerlink" title="项目来源"></a>项目来源</h3><p><a href="https://www.bilibili.com/video/BV1t84y1q7Xn/?spm_id_from=333.999.0.0&amp;vd_source=e8e1b6de93e68d8ce8ab44afe5802a40">展哥更新了-字醒app</a><br><a href="https://juejin.cn/post/7091582094614691854">几行字</a></p>
-<h3 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h3><p>uniapp + 微信云开发, uniapp 只开发微信端， 微信云开发省去搭建后端项目的繁琐。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/12/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2022/12/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/12/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">记录学习微信小程序遇到的问题和解决方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-12-06 15:45:22" itemprop="dateCreated datePublished" datetime="2022-12-06T15:45:22+08:00">2022-12-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-06 21:48:08" itemprop="dateModified" datetime="2023-12-06T21:48:08+08:00">2023-12-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">微信小程序</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/12/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="记录学习微信小程序遇到的问题和解决方案" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="微信小程序入门"><a href="#微信小程序入门" class="headerlink" title="微信小程序入门"></a>微信小程序入门</h1><h2 id="认识项目结构"><a href="#认识项目结构" class="headerlink" title="认识项目结构"></a>认识项目结构</h2><ol>
-<li><code>cloudfunctions</code> 云函数</li>
-<li><code>miniprogram</code> 小程序</li>
-<li><code>miniprogram_npm</code> 是项目所需要的依赖，<code>node_module</code> 是本地依赖。用<code>npm install</code> 安装完本地依赖，需要使用小程序ide 工具 –&gt; 构建npm 进行构建后才能供小程序使用。</li>
-</ol>
-<blockquote>
-<p>微信官方文档，虽然文档我感觉并不适合入门， 但是还是比很多资料都要好点， 不建议全看完才进行开发。 弄懂一些概念即可。</p>
-</blockquote>
-<p>大致有四种文件， js  逻辑， json, 配置， wxml， 类比html 结构， wxss， 类比 css。<br>全局的是app, <code>app.js</code>, 定义全局的函数， <code>app.json</code> 定义全局的配置。<br>局部的是<code>page</code>, <code>component</code>。 ,  有个 <code>data</code> 字段，页面的初始数据，至于页面的生命周期函数，需要的时候再详细看文档即可。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/12/06/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2019/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">记一次Ubuntu系统搭建过程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-27 12:28:07" itemprop="dateCreated datePublished" datetime="2019-01-27T12:28:07+08:00">2019-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-26 22:35:40" itemprop="dateModified" datetime="2022-10-26T22:35:40+08:00">2022-10-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="记一次Ubuntu系统搭建过程" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="记一次安装Ubuntu搭建过程"><a href="#记一次安装Ubuntu搭建过程" class="headerlink" title="记一次安装Ubuntu搭建过程"></a>记一次安装Ubuntu搭建过程</h1><h2 id="安装Ubuntu"><a href="#安装Ubuntu" class="headerlink" title="安装Ubuntu"></a>安装Ubuntu</h2><p><a href="https://www.bilibili.com/video/av22847796?from=search&amp;seid=3382793518763602250">B站av号av22847796</a>这个视频只是一个开始，有能力也有别的需求的朋友可以科学上网到youtube找安装双系统的视频，你可以找到很多相当不错的教程。</p>
-<p><strong>Notes</strong>:</p>
-<ol>
-<li>在本机上实验需要保存好自己的数据和重要数据。及时做好备份。</li>
-<li>如何选择种类繁多的Linux系统，例如Debian,Fedora,Ａrch linux。简单说说我对这几个系统的理解，Debian系对用户更友好，更容易上手，想想Ubuntu就知道了，Ubuntu就是Debian的一个分支。Fedora系对用户技术要求高，适合想要追求技术和服务器使用centos、RedHat的朋友。ArchLinux系不推荐，适合不怕事，有大量空闲时间和精力，想要折腾的朋友。系统版本选择，推荐较新的版本，因为最新版本可能会有一些解决不了的问题，社区，搜索引擎很难找到解决答案，而太老版本你可能需要做很多无用功了，而且有很多新特性你体会不到。举个例子，snap需要在Ubuntu 16.04版本及以上版本中使用。</li>
-<li>分区选择，如果不会，可以全部安装在/根目录下，稍微进阶的是，设置swap交换分区，再进阶的是，根据需求定制自己的要求。</li>
-<li>桌面环境应该要求稳定，适合自己就好，不要去过度追求酷炫。（写给自己）</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/01/27/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lhl02531.github.io/2019/01/12/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lv">
-      <meta itemprop="description" content="lv">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/01/12/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">hexo博客搭建</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-01-12 03:16:12" itemprop="dateCreated datePublished" datetime="2019-01-12T03:16:12+08:00">2019-01-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-18 23:03:56" itemprop="dateModified" datetime="2024-02-18T23:03:56+08:00">2024-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">博客</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2019/01/12/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-meta-item leancloud_visitors" data-flag-title="hexo博客搭建" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Hexo博客搭建记录"><a href="#Hexo博客搭建记录" class="headerlink" title="Hexo博客搭建记录"></a>Hexo博客搭建记录</h1><p>搭建一个个人博客一直是自己的想法，选择有很多，有Hexo，Hugo，jekkll，workpress，国内大的写作平台也有CSDN,博客园，简书。选择一个自己喜欢，坚持写下去吧。<br>接下来，就是这个博客的搭建过程。希望对你有所帮助。<br>（接下来是在windows平台实践的）</p>
-<h2 id="Hexo是什么"><a href="#Hexo是什么" class="headerlink" title="Hexo是什么"></a>Hexo是什么</h2><p>来自官网的解释</p>
-<blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。<br>Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/01/12/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -1135,6 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">项目背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91"><span class="nav-number">2.</span> <span class="nav-text">项目的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="nav-number">2.1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.2.</span> <span class="nav-text">前端项目初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%96%B0%E5%BB%BA%E5%92%8C%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">2.2.1.</span> <span class="nav-text">项目新建和安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E6%A0%A1%E9%AA%8C%E5%92%8C%E7%BE%8E%E5%8C%96%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.2.</span> <span class="nav-text">格式校验和美化代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.3.</span> <span class="nav-text">后端项目初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Egg-js-%E8%84%9A%E6%89%8B%E6%9E%B6%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.3.1.</span> <span class="nav-text">使用 Egg.js 脚手架进行初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Egg-js-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">2.3.2.</span> <span class="nav-text">Egg.js 基础知识</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E4%BB%A3%E7%A0%81-%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">写代码 遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96-css"><span class="nav-number">2.4.1.</span> <span class="nav-text">模块化 css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Localstorage-ts-%E7%AE%80%E5%8D%95%E5%B0%81%E8%A3%85"><span class="nav-number">2.4.2.</span> <span class="nav-text">Localstorage ts 简单封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axios-ts-%E7%AE%80%E5%8D%95%E5%B0%81%E8%A3%85"><span class="nav-number">2.4.3.</span> <span class="nav-text">axios ts 简单封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#echarts-%E5%B0%81%E8%A3%85"><span class="nav-number">2.4.4.</span> <span class="nav-text">echarts 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%85%B1%E5%A4%B4%E9%83%A8"><span class="nav-number">2.4.5.</span> <span class="nav-text">公共头部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9D%83%E9%99%90%E8%B7%AF%E7%94%B1"><span class="nav-number">2.4.6.</span> <span class="nav-text">自定义权限路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%9A%84Icon-%E5%B0%81%E8%A3%85"><span class="nav-number">2.4.7.</span> <span class="nav-text">项目的Icon 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeScript-%E4%B8%8E-React-%E7%9A%84%E7%BB%93%E5%90%88"><span class="nav-number">2.4.8.</span> <span class="nav-text">TypeScript 与 React 的结合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%A0%E9%80%92ref%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6"><span class="nav-number">2.4.8.1.</span> <span class="nav-text">传递ref给子组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Antd-mobile"><span class="nav-number">2.4.9.</span> <span class="nav-text">Antd mobile</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">2.4.9.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Popup"><span class="nav-number">2.4.9.2.</span> <span class="nav-text">Popup</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%92%8C%E5%88%A0%E9%99%A4%E5%9B%BE%E7%89%87%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.4.10.</span> <span class="nav-text">后端上传图片和删除图片接口</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E4%B8%8A%E7%BA%BF"><span class="nav-number">3.</span> <span class="nav-text">项目部署上线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%AB%AF%E4%B8%8A%E7%BA%BF"><span class="nav-number">3.1.</span> <span class="nav-text">后端上线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%83%A8%E5%88%86"><span class="nav-number">3.1.1.</span> <span class="nav-text">数据库部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#egg"><span class="nav-number">3.1.2.</span> <span class="nav-text">egg</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E4%BB%A3%E7%A0%81-%E6%89%93%E5%8C%85%E4%B8%8A%E7%BA%BF"><span class="nav-number">3.2.</span> <span class="nav-text">前端代码 打包上线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-%E9%85%8D%E7%BD%AE-css-js-%E8%AE%BF%E9%97%AE%E4%B8%8D%E5%88%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">nginx 配置, css,js 访问不到</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
